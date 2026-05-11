@@ -11,6 +11,7 @@ df = preprocess()
 # st.dataframe(df)
 fig = weekly_plot()
 
+st.set_page_config(layout="wide",page_title="Rise and Shine")
 st.title("Rise And Shine")
 col1, col2 = st.columns(2)
 with col1:
