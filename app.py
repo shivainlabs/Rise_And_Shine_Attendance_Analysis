@@ -19,12 +19,18 @@ st.title("Rise And Shine")
 col1, col2 = st.columns(2)
 with col1:
     # df["date"] = pd.to_datetime(df["date"]).dt.strftime("%d/%m/%Y")
-    # today_date = datetime.now(
-    #     ZoneInfo("Asia/Kolkata")
-    # ).strftime("%d/%m/%Y")
+    today_date = pd.to_datetime(datetime.now(ZoneInfo("Asia/Kolkata")).date())
     
-    # current_week = df[df["date"]==today_date].head(1)["week"].values[0]
-    # st.text(f"Today's Date: {today_date} | Current Week: Week {current_week}")    
+    filtered_df = df[df["date"] == today_date]
+
+    if not filtered_df.empty:
+        current_week = filtered_df.iloc[0]["week"]
+    else:
+        current_week = "No data"
+        
+    display_date = today_date.strftime("%d/%m/%Y")
+    st.text(
+        f"Today's Date: {display_date} | Current Week: Week {current_week}")
     st.pyplot(fig)
     
 
