@@ -18,9 +18,11 @@ st.set_page_config(layout="wide",page_title="Rise and Shine")
 st.title("Rise And Shine")
 col1, col2 = st.columns(2)
 with col1:
+    df["date"] = pd.to_datetime(df["date"]).dt.strftime("%d/%m/%Y")
     today_date = datetime.now(
         ZoneInfo("Asia/Kolkata")
     ).strftime("%d/%m/%Y")
+    
     current_week = df[df["date"]==today_date].head(1)["week"].values[0]
     st.text(f"Today's Date: {today_date} | Current Week: Week {current_week}")    
     st.pyplot(fig)
