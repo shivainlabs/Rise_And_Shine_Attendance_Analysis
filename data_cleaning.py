@@ -2,9 +2,7 @@ import pandas as pd
 import numpy as np
 import time
 
-# url = "https://docs.google.com/spreadsheets/d/1ZyTt2VrhFFk8ro_E8juDT1KNSMQpgkXWJAxwPNj0Sr4/export?format=csv&gid=0"
-# url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQVpCawkt66Cfv04xQmI1QZ_c8paOKSupUxAP_Uf-K7fee-UBQeE9GKiU_7XURlPU6J0fHoMd9Wsw5w/pub?output=csv"
-url = f"https://docs.google.com/spreadsheets/d/e/2PACX-1vQVpCawkt66Cfv04xQmI1QZ_c8paOKSupUxAP_Uf-K7fee-UBQeE9GKiU_7XURlPU6J0fHoMd9Wsw5w/pub?output=csv&t={time.time()}"
+url = "https://docs.google.com/spreadsheets/d/1ZyTt2VrhFFk8ro_E8juDT1KNSMQpgkXWJAxwPNj0Sr4/export?format=csv&gid=0"
 
 def load_and_clean_data():
     df = pd.read_csv(url)
