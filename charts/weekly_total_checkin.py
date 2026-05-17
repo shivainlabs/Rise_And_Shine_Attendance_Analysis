@@ -1,14 +1,14 @@
 import seaborn as sns
-from data_cleaning import load_and_clean_data
-from preprocessing import preprocess
+from data.data_cleaning import load_and_clean_data
+from data.preprocessing import preprocess
 import matplotlib.pyplot as plt
 
-df = preprocess()
+# df = preprocess()
 
 import matplotlib.pyplot as plt
 import numpy as np
 
-def weekly_plot():
+def weekly_plot(df):
 
     weekly_counts = (
         df.groupby("week")["checkin"]
