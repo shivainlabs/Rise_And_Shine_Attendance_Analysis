@@ -35,10 +35,8 @@ if page == "📊 Dashboard":
 elif page == "👤 Individual Analysis":
     st.title("👤 Individual Weekly Analysis")
     name = st.selectbox("Total Weekly Detail",list(df["name"].unique()))
-    name_btn = st.button("Show...")
-    if name_btn:
-        fig = individual_weekly_plot(df,name)
-        st.pyplot(fig)
+    fig = individual_weekly_plot(df,name)
+    st.pyplot(fig)
  
  
 elif page == "🚫 Inactive Users":
