@@ -8,7 +8,7 @@ def load_and_clean_data():
     df = pd.read_csv(url)
     
     df = df.drop(["count week1", "count week2"], axis=1)
-    df = df.iloc[0:17]
+    df = df.iloc[0:len(df)-2]
     df = df.loc[:, ~df.columns.str.contains(r"^count")]
 
     
